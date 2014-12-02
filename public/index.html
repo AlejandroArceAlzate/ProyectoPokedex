@@ -150,7 +150,7 @@
               <blockquote ng-repeat="comment in cmtsCtrl.comments">
                 <p>{{comment.body}}</p>
                 <footer>
-                  Comment by <a ng-if="!comment.anonymous" href="mailto:{{comment.email}}">{{comment.email}}</a> on <span>{{comment.date}}</span>
+                  Comment by <a ng-if="!comment.anonymous" href="mailto:{{comment.email}}">{{comment.email}}</a> on <span>{{comment.date | date : "medium"}}</span>
                   <em ng-if="comment.anonymous">Anonymous</em>
                 </footer>
               </blockquote>
