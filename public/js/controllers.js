@@ -1,7 +1,15 @@
 (function(){
 	angular.module("pokedex.controllers", [])
-		.controller("PokemonController", function(){
-			this.pokemon={
+		.controller('PokedexController', ['$scope', '$http', function($scope, $http){
+			$scope.pokemons = [];
+
+			$http.get('pokemons.json')
+				.success(function(data){
+					$scope.pokemons = data;
+				});
+		}])
+		.controller("PokemonController", ['$scope', function($scope){
+			$scope.pokemon = {
 				id: "001",
 				name: "Bulbasaur",
 				species: "Seed Pokemon",
@@ -20,7 +28,7 @@
 			      },
 	      		evolution: [ "Bulbasaur", "Ivysaur", "Venusaur" ]
 			};
-		})
+		}])
 		.controller("TabsController", function(){
 			this.tab = 1;
 
