@@ -3,7 +3,8 @@
 		'ngRoute',
 		'pokedex.controllers',
 	    'pokedex.directives',
-	    'pokedex.filters'
+	    'pokedex.filters',
+	    'pokedex.services'
 		]);
 	app.config(['$routeProvider', function($routeProvider){
 		$routeProvider
@@ -11,7 +12,7 @@
 				templateUrl: 'views/pokedex.html',
 				controller: 'PokedexController'
 			})
-			.when('/pokemon/:id',{
+			.when('/pokemon/:name',{
 				templateUrl: 'views/pokemon.html',
 				controller: 'PokemonController',
 			})
