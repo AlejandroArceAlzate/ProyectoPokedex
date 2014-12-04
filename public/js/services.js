@@ -35,11 +35,30 @@
 					}
 				});
 
-				return deferred.promise
+				return deferred.promise;
+			}
+
+			function byType(type)
+			{
+				type = normalize(type);
+				var deferred = $q.defer();
+
+				all().then(function(data){
+					var results = data.filter(function(pokemon){
+						return pokemon.type.some(function (t) {
+							return normalize(t) === type;
+						}); 
+					});
+
+					deferred.resolve(results);
+				});
+
+				return deferred.promise;
 			}
 			return{
 				all: all,
-				byName : byName
+				byName : byName,
+				byType : byType
 			}
 		}]);
 })();
