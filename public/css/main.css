@@ -126,15 +126,7 @@ body {
 }
 
 .pokemon {
-  padding: 20px;
-  margin-bottom: 10px;
-  border: solid 1px #D9230F;
-  border-radius: 20px;
-}
-
-
-.pokemon:hover {
-  border: solid 3px #D9230F;
+  height: 350px;
 }
 
 .pokemon h1 {
@@ -148,7 +140,14 @@ body {
 }
 
 .pokemon img {
-  width: 300px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 200px;
+  max-height: 220px;
 }
 
 .pokemon .panel-body {
