@@ -1,5 +1,5 @@
 <!-- pokemon -->
-<div ng-controller="PokemonController as pkmCtrl">
+<div>
   <div class="page-header">
     <pokemon-name></pokemon-name>
   </div>
@@ -7,6 +7,7 @@
     <div class="col-md-6">
       <pokemon-image></pokemon-image>
     </div>
+    <!-- Tabs -->
     <div class="col-md-6" ng-controller="TabsController as tabs">
       <ul class="nav nav-tabs nav-justified">
         <li ng-class="{ active:tabs.tab === 1 }"><a ng-click="tabs.selectTab(1)">Pokédex</a></li>
@@ -14,12 +15,11 @@
         <li ng-class="{ active:tabs.tab === 3 }"><a ng-click="tabs.selectTab(3)">Evolution</a></li>
       </ul>
       <div class="tab-content">
+        <!-- Pokedex -->
         <div ng-show="tabs.tab === 1">
           <pokemon-data></pokemon-data>
         </div>
-      </div>
-    </div>
-    <!-- Stats -->
+        <!-- Stats -->
         <div ng-show="tabs.tab === 2">
           <pokemon-stats></pokemon-stats>
         </div>
@@ -27,6 +27,9 @@
         <div ng-show="tabs.tab === 3">
           <pokemon-evolution></pokemon-evolution>
         </div>
+      </div>
+    </div>
+    <!-- /tabs -->
   </div>
   <!-- comments -->
   <pokemon-comments name="{{pokemon.name}}"></pokemon-comments>
